@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HostalSILModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HostalSILEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Boleta" EntityType="HostalSILModel.Boleta" />
+    <EntitySet Name="Categoria_Servicio" EntityType="HostalSILModel.Categoria_Servicio" />
+    <EntitySet Name="CategoriaMovoliario" EntityType="HostalSILModel.CategoriaMovoliario" />
+    <EntitySet Name="CheckIn" EntityType="HostalSILModel.CheckIn" />
+    <EntitySet Name="CheckOut" EntityType="HostalSILModel.CheckOut" />
+    <EntitySet Name="Comprobante" EntityType="HostalSILModel.Comprobante" />
+    <EntitySet Name="DetalleCheckIn" EntityType="HostalSILModel.DetalleCheckIn" />
+    <EntitySet Name="DetalleMoviliarioHabitacion" EntityType="HostalSILModel.DetalleMoviliarioHabitacion" />
+    <EntitySet Name="DetallePersonasCheckIn" EntityType="HostalSILModel.DetallePersonasCheckIn" />
+    <EntitySet Name="DetalleReserva" EntityType="HostalSILModel.DetalleReserva" />
+    <EntitySet Name="DetalleServicioCheckIn" EntityType="HostalSILModel.DetalleServicioCheckIn" />
+    <EntitySet Name="DetalleUsuarioRol" EntityType="HostalSILModel.DetalleUsuarioRol" />
+    <EntitySet Name="Empresa" EntityType="HostalSILModel.Empresa" />
+    <EntitySet Name="Facturas" EntityType="HostalSILModel.Facturas" />
+    <EntitySet Name="Habitacion" EntityType="HostalSILModel.Habitacion" />
+    <EntitySet Name="Incidencia" EntityType="HostalSILModel.Incidencia" />
+    <EntitySet Name="Moviliario" EntityType="HostalSILModel.Moviliario" />
+    <EntitySet Name="Persona" EntityType="HostalSILModel.Persona" />
+    <EntitySet Name="Piso" EntityType="HostalSILModel.Piso" />
+    <EntitySet Name="Productos" EntityType="HostalSILModel.Productos" />
+    <EntitySet Name="Reserva" EntityType="HostalSILModel.Reserva" />
+    <EntitySet Name="Rol" EntityType="HostalSILModel.Rol" />
+    <EntitySet Name="Servicio" EntityType="HostalSILModel.Servicio" />
+    <EntitySet Name="sysdiagrams" EntityType="HostalSILModel.sysdiagrams" />
+    <EntitySet Name="TipoHabitacion" EntityType="HostalSILModel.TipoHabitacion" />
+    <EntitySet Name="Usuario" EntityType="HostalSILModel.Usuario" />
+    <AssociationSet Name="FK_Comprobante_Boleta" Association="HostalSILModel.FK_Comprobante_Boleta">
+      <End Role="Boleta" EntitySet="Boleta" />
+      <End Role="Comprobante" EntitySet="Comprobante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servicio_Categoria_Servicio" Association="HostalSILModel.FK_Servicio_Categoria_Servicio">
+      <End Role="Categoria_Servicio" EntitySet="Categoria_Servicio" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Moviliario_CategoriaMovoliario" Association="HostalSILModel.FK_Moviliario_CategoriaMovoliario">
+      <End Role="CategoriaMovoliario" EntitySet="CategoriaMovoliario" />
+      <End Role="Moviliario" EntitySet="Moviliario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckIn_Reserva" Association="HostalSILModel.FK_CheckIn_Reserva">
+      <End Role="Reserva" EntitySet="Reserva" />
+      <End Role="CheckIn" EntitySet="CheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckOut_CheckIn" Association="HostalSILModel.FK_CheckOut_CheckIn">
+      <End Role="CheckIn" EntitySet="CheckIn" />
+      <End Role="CheckOut" EntitySet="CheckOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleCheckIn_CheckIn" Association="HostalSILModel.FK_DetalleCheckIn_CheckIn">
+      <End Role="CheckIn" EntitySet="CheckIn" />
+      <End Role="DetalleCheckIn" EntitySet="DetalleCheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleServicioCheckIn_CheckIn" Association="HostalSILModel.FK_DetalleServicioCheckIn_CheckIn">
+      <End Role="CheckIn" EntitySet="CheckIn" />
+      <End Role="DetalleServicioCheckIn" EntitySet="DetalleServicioCheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckOut_Comprobante" Association="HostalSILModel.FK_CheckOut_Comprobante">
+      <End Role="Comprobante" EntitySet="Comprobante" />
+      <End Role="CheckOut" EntitySet="CheckOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comprobante_Facturas" Association="HostalSILModel.FK_Comprobante_Facturas">
+      <End Role="Facturas" EntitySet="Facturas" />
+      <End Role="Comprobante" EntitySet="Comprobante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleCheckIn_Habitacion" Association="HostalSILModel.FK_DetalleCheckIn_Habitacion">
+      <End Role="Habitacion" EntitySet="Habitacion" />
+      <End Role="DetalleCheckIn" EntitySet="DetalleCheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetallePersonasCheckIn_DetalleCheckIn" Association="HostalSILModel.FK_DetallePersonasCheckIn_DetalleCheckIn">
+      <End Role="DetalleCheckIn" EntitySet="DetalleCheckIn" />
+      <End Role="DetallePersonasCheckIn" EntitySet="DetallePersonasCheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleMoviliarioHabitacion_Habitacion" Association="HostalSILModel.FK_DetalleMoviliarioHabitacion_Habitacion">
+      <End Role="Habitacion" EntitySet="Habitacion" />
+      <End Role="DetalleMoviliarioHabitacion" EntitySet="DetalleMoviliarioHabitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleMoviliarioHabitacion_Moviliario" Association="HostalSILModel.FK_DetalleMoviliarioHabitacion_Moviliario">
+      <End Role="Moviliario" EntitySet="Moviliario" />
+      <End Role="DetalleMoviliarioHabitacion" EntitySet="DetalleMoviliarioHabitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetallePersonasCheckIn_Persona" Association="HostalSILModel.FK_DetallePersonasCheckIn_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="DetallePersonasCheckIn" EntitySet="DetallePersonasCheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleReserva_Habitacion" Association="HostalSILModel.FK_DetalleReserva_Habitacion">
+      <End Role="Habitacion" EntitySet="Habitacion" />
+      <End Role="DetalleReserva" EntitySet="DetalleReserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleReserva_Reserva" Association="HostalSILModel.FK_DetalleReserva_Reserva">
+      <End Role="Reserva" EntitySet="Reserva" />
+      <End Role="DetalleReserva" EntitySet="DetalleReserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleServicioCheckIn_Servicio" Association="HostalSILModel.FK_DetalleServicioCheckIn_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="DetalleServicioCheckIn" EntitySet="DetalleServicioCheckIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleUsuarioRol_Rol" Association="HostalSILModel.FK_DetalleUsuarioRol_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="DetalleUsuarioRol" EntitySet="DetalleUsuarioRol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleUsuarioRol_Usuario" Association="HostalSILModel.FK_DetalleUsuarioRol_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="DetalleUsuarioRol" EntitySet="DetalleUsuarioRol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Facturas_Empresa" Association="HostalSILModel.FK_Facturas_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitacion_Piso" Association="HostalSILModel.FK_Habitacion_Piso">
+      <End Role="Piso" EntitySet="Piso" />
+      <End Role="Habitacion" EntitySet="Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitacion_TipoHabitacion" Association="HostalSILModel.FK_Habitacion_TipoHabitacion">
+      <End Role="TipoHabitacion" EntitySet="TipoHabitacion" />
+      <End Role="Habitacion" EntitySet="Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reserva_Persona" Association="HostalSILModel.FK_Reserva_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Reserva" EntitySet="Reserva" />
+    </AssociationSet>
+    <FunctionImport Name="GetAllPersonas" ReturnType="Collection(HostalSILModel.GetAllPersonas_Result)" />
+    <FunctionImport Name="GetAllPisos" ReturnType="Collection(HostalSILModel.GetAllPisos_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HostalSILModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HostalSILModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="Boleta">
+    <Key>
+      <PropertyRef Name="IdBoleta" />
+    </Key>
+    <Property Name="IdBoleta" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MontoTotal" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="Comprobante" Relationship="HostalSILModel.FK_Comprobante_Boleta" FromRole="Boleta" ToRole="Comprobante" />
+  </EntityType>
+  <EntityType Name="Categoria_Servicio">
+    <Key>
+      <PropertyRef Name="IdCategoriaServicio" />
+    </Key>
+    <Property Name="IdCategoriaServicio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCategoriaServicio" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DescCategoriaServicio" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Servicio" Relationship="HostalSILModel.FK_Servicio_Categoria_Servicio" FromRole="Categoria_Servicio" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="CategoriaMovoliario">
+    <Key>
+      <PropertyRef Name="IdCategoriaMoviliario" />
+    </Key>
+    <Property Name="IdCategoriaMoviliario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NomCatMoviliario" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="DescCategoriaMoviliario" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Moviliario" Relationship="HostalSILModel.FK_Moviliario_CategoriaMovoliario" FromRole="CategoriaMovoliario" ToRole="Moviliario" />
+  </EntityType>
+  <EntityType Name="CheckIn">
+    <Key>
+      <PropertyRef Name="IdCheckIn" />
+    </Key>
+    <Property Name="IdCheckIn" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdReserva" Type="Int32" />
+    <Property Name="FechaIngeso" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Reserva" Relationship="HostalSILModel.FK_CheckIn_Reserva" FromRole="CheckIn" ToRole="Reserva" />
+    <NavigationProperty Name="CheckOut" Relationship="HostalSILModel.FK_CheckOut_CheckIn" FromRole="CheckIn" ToRole="CheckOut" />
+    <NavigationProperty Name="DetalleCheckIn" Relationship="HostalSILModel.FK_DetalleCheckIn_CheckIn" FromRole="CheckIn" ToRole="DetalleCheckIn" />
+    <NavigationProperty Name="DetalleServicioCheckIn" Relationship="HostalSILModel.FK_DetalleServicioCheckIn_CheckIn" FromRole="CheckIn" ToRole="DetalleServicioCheckIn" />
+  </EntityType>
+  <EntityType Name="CheckOut">
+    <Key>
+      <PropertyRef Name="IdCheckOut" />
+    </Key>
+    <Property Name="IdCheckOut" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCheckIn" Type="Int32" />
+    <Property Name="IdComprobante" Type="Int32" />
+    <NavigationProperty Name="CheckIn" Relationship="HostalSILModel.FK_CheckOut_CheckIn" FromRole="CheckOut" ToRole="CheckIn" />
+    <NavigationProperty Name="Comprobante" Relationship="HostalSILModel.FK_CheckOut_Comprobante" FromRole="CheckOut" ToRole="Comprobante" />
+  </EntityType>
+  <EntityType Name="Comprobante">
+    <Key>
+      <PropertyRef Name="IdComprobante" />
+    </Key>
+    <Property Name="IdComprobante" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdBoleta" Type="Int32" />
+    <Property Name="IdFactura" Type="Int32" />
+    <NavigationProperty Name="Boleta" Relationship="HostalSILModel.FK_Comprobante_Boleta" FromRole="Comprobante" ToRole="Boleta" />
+    <NavigationProperty Name="CheckOut" Relationship="HostalSILModel.FK_CheckOut_Comprobante" FromRole="Comprobante" ToRole="CheckOut" />
+    <NavigationProperty Name="Facturas" Relationship="HostalSILModel.FK_Comprobante_Facturas" FromRole="Comprobante" ToRole="Facturas" />
+  </EntityType>
+  <EntityType Name="DetalleCheckIn">
+    <Key>
+      <PropertyRef Name="IdDetalleCheckIn" />
+    </Key>
+    <Property Name="IdDetalleCheckIn" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCheckIn" Type="Int32" />
+    <Property Name="IdHabitacion" Type="Int32" />
+    <NavigationProperty Name="CheckIn" Relationship="HostalSILModel.FK_DetalleCheckIn_CheckIn" FromRole="DetalleCheckIn" ToRole="CheckIn" />
+    <NavigationProperty Name="Habitacion" Relationship="HostalSILModel.FK_DetalleCheckIn_Habitacion" FromRole="DetalleCheckIn" ToRole="Habitacion" />
+    <NavigationProperty Name="DetallePersonasCheckIn" Relationship="HostalSILModel.FK_DetallePersonasCheckIn_DetalleCheckIn" FromRole="DetalleCheckIn" ToRole="DetallePersonasCheckIn" />
+  </EntityType>
+  <EntityType Name="DetalleMoviliarioHabitacion">
+    <Key>
+      <PropertyRef Name="IdDetalleMovHab" />
+    </Key>
+    <Property Name="IdDetalleMovHab" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdMoviliario" Type="Int32" />
+    <Property Name="IdHabitacion" Type="Int32" />
+    <NavigationProperty Name="Habitacion" Relationship="HostalSILModel.FK_DetalleMoviliarioHabitacion_Habitacion" FromRole="DetalleMoviliarioHabitacion" ToRole="Habitacion" />
+    <NavigationProperty Name="Moviliario" Relationship="HostalSILModel.FK_DetalleMoviliarioHabitacion_Moviliario" FromRole="DetalleMoviliarioHabitacion" ToRole="Moviliario" />
+  </EntityType>
+  <EntityType Name="DetallePersonasCheckIn">
+    <Key>
+      <PropertyRef Name="IdDetallePesonasCheckIn" />
+    </Key>
+    <Property Name="IdDetallePesonasCheckIn" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDetalleCheckIn" Type="Int32" />
+    <Property Name="DNI" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="DetalleCheckIn" Relationship="HostalSILModel.FK_DetallePersonasCheckIn_DetalleCheckIn" FromRole="DetallePersonasCheckIn" ToRole="DetalleCheckIn" />
+    <NavigationProperty Name="Persona" Relationship="HostalSILModel.FK_DetallePersonasCheckIn_Persona" FromRole="DetallePersonasCheckIn" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="DetalleReserva">
+    <Key>
+      <PropertyRef Name="IdDetalleReserva" />
+    </Key>
+    <Property Name="IdDetalleReserva" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdReserva" Type="Int32" />
+    <Property Name="IdHabitacion" Type="Int32" />
+    <NavigationProperty Name="Habitacion" Relationship="HostalSILModel.FK_DetalleReserva_Habitacion" FromRole="DetalleReserva" ToRole="Habitacion" />
+    <NavigationProperty Name="Reserva" Relationship="HostalSILModel.FK_DetalleReserva_Reserva" FromRole="DetalleReserva" ToRole="Reserva" />
+  </EntityType>
+  <EntityType Name="DetalleServicioCheckIn">
+    <Key>
+      <PropertyRef Name="IdDetalleServicioCheckIn" />
+    </Key>
+    <Property Name="IdDetalleServicioCheckIn" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCheckIn" Type="Int32" />
+    <Property Name="IdServicio" Type="Int32" />
+    <Property Name="Cantidad" Type="Int32" />
+    <NavigationProperty Name="CheckIn" Relationship="HostalSILModel.FK_DetalleServicioCheckIn_CheckIn" FromRole="DetalleServicioCheckIn" ToRole="CheckIn" />
+    <NavigationProperty Name="Servicio" Relationship="HostalSILModel.FK_DetalleServicioCheckIn_Servicio" FromRole="DetalleServicioCheckIn" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="DetalleUsuarioRol">
+    <Key>
+      <PropertyRef Name="IdDetalleUsuarioRol" />
+    </Key>
+    <Property Name="IdDetalleUsuarioRol" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" />
+    <Property Name="IdRol" Type="Int32" />
+    <NavigationProperty Name="Rol" Relationship="HostalSILModel.FK_DetalleUsuarioRol_Rol" FromRole="DetalleUsuarioRol" ToRole="Rol" />
+    <NavigationProperty Name="Usuario" Relationship="HostalSILModel.FK_DetalleUsuarioRol_Usuario" FromRole="DetalleUsuarioRol" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="IdEmpresa" />
+    </Key>
+    <Property Name="IdEmpresa" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RazonSocial" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" Unicode="false" FixedLength="true" />
+    <Property Name="Direccion" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="9" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Facturas" Relationship="HostalSILModel.FK_Facturas_Empresa" FromRole="Empresa" ToRole="Facturas" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="IdFacura" />
+    </Key>
+    <Property Name="IdFacura" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="igv" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="SubTotal" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="MontoTotal" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="Comprobante" Relationship="HostalSILModel.FK_Comprobante_Facturas" FromRole="Facturas" ToRole="Comprobante" />
+    <NavigationProperty Name="Empresa" Relationship="HostalSILModel.FK_Facturas_Empresa" FromRole="Facturas" ToRole="Empresa" />
+  </EntityType>
+  <EntityType Name="Habitacion">
+    <Key>
+      <PropertyRef Name="IdHabitacion" />
+    </Key>
+    <Property Name="IdHabitacion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeroHabitacion" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="IdPiso" Type="Int32" />
+    <Property Name="IdTipoHabitacion" Type="Int32" />
+    <Property Name="Estado" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="DetalleCheckIn" Relationship="HostalSILModel.FK_DetalleCheckIn_Habitacion" FromRole="Habitacion" ToRole="DetalleCheckIn" />
+    <NavigationProperty Name="DetalleMoviliarioHabitacion" Relationship="HostalSILModel.FK_DetalleMoviliarioHabitacion_Habitacion" FromRole="Habitacion" ToRole="DetalleMoviliarioHabitacion" />
+    <NavigationProperty Name="DetalleReserva" Relationship="HostalSILModel.FK_DetalleReserva_Habitacion" FromRole="Habitacion" ToRole="DetalleReserva" />
+    <NavigationProperty Name="Piso" Relationship="HostalSILModel.FK_Habitacion_Piso" FromRole="Habitacion" ToRole="Piso" />
+    <NavigationProperty Name="TipoHabitacion" Relationship="HostalSILModel.FK_Habitacion_TipoHabitacion" FromRole="Habitacion" ToRole="TipoHabitacion" />
+  </EntityType>
+  <EntityType Name="Incidencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Moviliario">
+    <Key>
+      <PropertyRef Name="IdMoviliario" />
+    </Key>
+    <Property Name="IdMoviliario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCategoriaMoviliario" Type="Int32" />
+    <Property Name="Moviliario1" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Costo" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="CategoriaMovoliario" Relationship="HostalSILModel.FK_Moviliario_CategoriaMovoliario" FromRole="Moviliario" ToRole="CategoriaMovoliario" />
+    <NavigationProperty Name="DetalleMoviliarioHabitacion" Relationship="HostalSILModel.FK_DetalleMoviliarioHabitacion_Moviliario" FromRole="Moviliario" ToRole="DetalleMoviliarioHabitacion" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="DNI" />
+    </Key>
+    <Property Name="DNI" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="Nombres" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="FecNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Telefono" Type="String" MaxLength="9" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="DetallePersonasCheckIn" Relationship="HostalSILModel.FK_DetallePersonasCheckIn_Persona" FromRole="Persona" ToRole="DetallePersonasCheckIn" />
+    <NavigationProperty Name="Reserva" Relationship="HostalSILModel.FK_Reserva_Persona" FromRole="Persona" ToRole="Reserva" />
+  </EntityType>
+  <EntityType Name="Piso">
+    <Key>
+      <PropertyRef Name="IdPiso" />
+    </Key>
+    <Property Name="IdPiso" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NombrePiso" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Habitacion" Relationship="HostalSILModel.FK_Habitacion_Piso" FromRole="Piso" ToRole="Habitacion" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="IdReserva" />
+    </Key>
+    <Property Name="IdReserva" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaReserva" Type="DateTime" Precision="0" />
+    <Property Name="FechaCheckIn" Type="DateTime" Precision="0" />
+    <Property Name="FechaCheckOut" Type="DateTime" Precision="0" />
+    <Property Name="DNI" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="CheckIn" Relationship="HostalSILModel.FK_CheckIn_Reserva" FromRole="Reserva" ToRole="CheckIn" />
+    <NavigationProperty Name="DetalleReserva" Relationship="HostalSILModel.FK_DetalleReserva_Reserva" FromRole="Reserva" ToRole="DetalleReserva" />
+    <NavigationProperty Name="Persona" Relationship="HostalSILModel.FK_Reserva_Persona" FromRole="Reserva" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="DescRol" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DetalleUsuarioRol" Relationship="HostalSILModel.FK_DetalleUsuarioRol_Rol" FromRole="Rol" ToRole="DetalleUsuarioRol" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="IdServicio" />
+    </Key>
+    <Property Name="IdServicio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCategoriaServicio" Type="Int32" />
+    <Property Name="NombreServicio" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DescServicio" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="Categoria_Servicio" Relationship="HostalSILModel.FK_Servicio_Categoria_Servicio" FromRole="Servicio" ToRole="Categoria_Servicio" />
+    <NavigationProperty Name="DetalleServicioCheckIn" Relationship="HostalSILModel.FK_DetalleServicioCheckIn_Servicio" FromRole="Servicio" ToRole="DetalleServicioCheckIn" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TipoHabitacion">
+    <Key>
+      <PropertyRef Name="IdTipoHabitacion" />
+    </Key>
+    <Property Name="IdTipoHabitacion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreTipoHabitacion" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="NroCamas" Type="Int32" />
+    <Property Name="Precio" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PrecioCorporativo" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="Habitacion" Relationship="HostalSILModel.FK_Habitacion_TipoHabitacion" FromRole="TipoHabitacion" ToRole="Habitacion" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DNIUsuario" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="NombresUsuario" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ApellidosUsuario" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="FecNacimientoUsuario" Type="DateTime" Precision="0" />
+    <Property Name="TelefonoUsuario" Type="String" MaxLength="9" Unicode="false" FixedLength="true" />
+    <Property Name="CelularUsuario" Type="String" MaxLength="9" Unicode="false" FixedLength="true" />
+    <Property Name="CorreoUsuario" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DetalleUsuarioRol" Relationship="HostalSILModel.FK_DetalleUsuarioRol_Usuario" FromRole="Usuario" ToRole="DetalleUsuarioRol" />
+  </EntityType>
+  <Association Name="FK_Comprobante_Boleta">
+    <End Role="Boleta" Type="HostalSILModel.Boleta" Multiplicity="0..1" />
+    <End Role="Comprobante" Type="HostalSILModel.Comprobante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Boleta">
+        <PropertyRef Name="IdBoleta" />
+      </Principal>
+      <Dependent Role="Comprobante">
+        <PropertyRef Name="IdBoleta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servicio_Categoria_Servicio">
+    <End Role="Categoria_Servicio" Type="HostalSILModel.Categoria_Servicio" Multiplicity="0..1" />
+    <End Role="Servicio" Type="HostalSILModel.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria_Servicio">
+        <PropertyRef Name="IdCategoriaServicio" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="IdCategoriaServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Moviliario_CategoriaMovoliario">
+    <End Role="CategoriaMovoliario" Type="HostalSILModel.CategoriaMovoliario" Multiplicity="0..1" />
+    <End Role="Moviliario" Type="HostalSILModel.Moviliario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaMovoliario">
+        <PropertyRef Name="IdCategoriaMoviliario" />
+      </Principal>
+      <Dependent Role="Moviliario">
+        <PropertyRef Name="IdCategoriaMoviliario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CheckIn_Reserva">
+    <End Role="Reserva" Type="HostalSILModel.Reserva" Multiplicity="0..1" />
+    <End Role="CheckIn" Type="HostalSILModel.CheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reserva">
+        <PropertyRef Name="IdReserva" />
+      </Principal>
+      <Dependent Role="CheckIn">
+        <PropertyRef Name="IdReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CheckOut_CheckIn">
+    <End Role="CheckIn" Type="HostalSILModel.CheckIn" Multiplicity="0..1" />
+    <End Role="CheckOut" Type="HostalSILModel.CheckOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CheckIn">
+        <PropertyRef Name="IdCheckIn" />
+      </Principal>
+      <Dependent Role="CheckOut">
+        <PropertyRef Name="IdCheckIn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleCheckIn_CheckIn">
+    <End Role="CheckIn" Type="HostalSILModel.CheckIn" Multiplicity="0..1" />
+    <End Role="DetalleCheckIn" Type="HostalSILModel.DetalleCheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CheckIn">
+        <PropertyRef Name="IdCheckIn" />
+      </Principal>
+      <Dependent Role="DetalleCheckIn">
+        <PropertyRef Name="IdCheckIn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleServicioCheckIn_CheckIn">
+    <End Role="CheckIn" Type="HostalSILModel.CheckIn" Multiplicity="0..1" />
+    <End Role="DetalleServicioCheckIn" Type="HostalSILModel.DetalleServicioCheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CheckIn">
+        <PropertyRef Name="IdCheckIn" />
+      </Principal>
+      <Dependent Role="DetalleServicioCheckIn">
+        <PropertyRef Name="IdCheckIn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CheckOut_Comprobante">
+    <End Role="Comprobante" Type="HostalSILModel.Comprobante" Multiplicity="0..1" />
+    <End Role="CheckOut" Type="HostalSILModel.CheckOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprobante">
+        <PropertyRef Name="IdComprobante" />
+      </Principal>
+      <Dependent Role="CheckOut">
+        <PropertyRef Name="IdComprobante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comprobante_Facturas">
+    <End Role="Facturas" Type="HostalSILModel.Facturas" Multiplicity="0..1" />
+    <End Role="Comprobante" Type="HostalSILModel.Comprobante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facturas">
+        <PropertyRef Name="IdFacura" />
+      </Principal>
+      <Dependent Role="Comprobante">
+        <PropertyRef Name="IdFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleCheckIn_Habitacion">
+    <End Role="Habitacion" Type="HostalSILModel.Habitacion" Multiplicity="0..1" />
+    <End Role="DetalleCheckIn" Type="HostalSILModel.DetalleCheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitacion">
+        <PropertyRef Name="IdHabitacion" />
+      </Principal>
+      <Dependent Role="DetalleCheckIn">
+        <PropertyRef Name="IdHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetallePersonasCheckIn_DetalleCheckIn">
+    <End Role="DetalleCheckIn" Type="HostalSILModel.DetalleCheckIn" Multiplicity="0..1" />
+    <End Role="DetallePersonasCheckIn" Type="HostalSILModel.DetallePersonasCheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleCheckIn">
+        <PropertyRef Name="IdDetalleCheckIn" />
+      </Principal>
+      <Dependent Role="DetallePersonasCheckIn">
+        <PropertyRef Name="IdDetalleCheckIn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleMoviliarioHabitacion_Habitacion">
+    <End Role="Habitacion" Type="HostalSILModel.Habitacion" Multiplicity="0..1" />
+    <End Role="DetalleMoviliarioHabitacion" Type="HostalSILModel.DetalleMoviliarioHabitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitacion">
+        <PropertyRef Name="IdHabitacion" />
+      </Principal>
+      <Dependent Role="DetalleMoviliarioHabitacion">
+        <PropertyRef Name="IdHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleMoviliarioHabitacion_Moviliario">
+    <End Role="Moviliario" Type="HostalSILModel.Moviliario" Multiplicity="0..1" />
+    <End Role="DetalleMoviliarioHabitacion" Type="HostalSILModel.DetalleMoviliarioHabitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Moviliario">
+        <PropertyRef Name="IdMoviliario" />
+      </Principal>
+      <Dependent Role="DetalleMoviliarioHabitacion">
+        <PropertyRef Name="IdMoviliario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetallePersonasCheckIn_Persona">
+    <End Role="Persona" Type="HostalSILModel.Persona" Multiplicity="0..1" />
+    <End Role="DetallePersonasCheckIn" Type="HostalSILModel.DetallePersonasCheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="DNI" />
+      </Principal>
+      <Dependent Role="DetallePersonasCheckIn">
+        <PropertyRef Name="DNI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleReserva_Habitacion">
+    <End Role="Habitacion" Type="HostalSILModel.Habitacion" Multiplicity="0..1" />
+    <End Role="DetalleReserva" Type="HostalSILModel.DetalleReserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitacion">
+        <PropertyRef Name="IdHabitacion" />
+      </Principal>
+      <Dependent Role="DetalleReserva">
+        <PropertyRef Name="IdHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleReserva_Reserva">
+    <End Role="Reserva" Type="HostalSILModel.Reserva" Multiplicity="0..1" />
+    <End Role="DetalleReserva" Type="HostalSILModel.DetalleReserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reserva">
+        <PropertyRef Name="IdReserva" />
+      </Principal>
+      <Dependent Role="DetalleReserva">
+        <PropertyRef Name="IdReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleServicioCheckIn_Servicio">
+    <End Role="Servicio" Type="HostalSILModel.Servicio" Multiplicity="0..1" />
+    <End Role="DetalleServicioCheckIn" Type="HostalSILModel.DetalleServicioCheckIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="IdServicio" />
+      </Principal>
+      <Dependent Role="DetalleServicioCheckIn">
+        <PropertyRef Name="IdServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleUsuarioRol_Rol">
+    <End Role="Rol" Type="HostalSILModel.Rol" Multiplicity="0..1" />
+    <End Role="DetalleUsuarioRol" Type="HostalSILModel.DetalleUsuarioRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="DetalleUsuarioRol">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleUsuarioRol_Usuario">
+    <End Role="Usuario" Type="HostalSILModel.Usuario" Multiplicity="0..1" />
+    <End Role="DetalleUsuarioRol" Type="HostalSILModel.DetalleUsuarioRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="DetalleUsuarioRol">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Facturas_Empresa">
+    <End Role="Empresa" Type="HostalSILModel.Empresa" Multiplicity="1" />
+    <End Role="Facturas" Type="HostalSILModel.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitacion_Piso">
+    <End Role="Piso" Type="HostalSILModel.Piso" Multiplicity="0..1" />
+    <End Role="Habitacion" Type="HostalSILModel.Habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Piso">
+        <PropertyRef Name="IdPiso" />
+      </Principal>
+      <Dependent Role="Habitacion">
+        <PropertyRef Name="IdPiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitacion_TipoHabitacion">
+    <End Role="TipoHabitacion" Type="HostalSILModel.TipoHabitacion" Multiplicity="0..1" />
+    <End Role="Habitacion" Type="HostalSILModel.Habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoHabitacion">
+        <PropertyRef Name="IdTipoHabitacion" />
+      </Principal>
+      <Dependent Role="Habitacion">
+        <PropertyRef Name="IdTipoHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reserva_Persona">
+    <End Role="Persona" Type="HostalSILModel.Persona" Multiplicity="0..1" />
+    <End Role="Reserva" Type="HostalSILModel.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="DNI" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="DNI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetAllPersonas_Result">
+    <Property Type="String" Name="DNI" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="NOMBRES" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="APELLIDOS" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="FECNACIMIENTO" Nullable="true" />
+    <Property Type="String" Name="TELEFONO" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="GetAllPisos_Result">
+    <Property Type="Int32" Name="IDPISO" Nullable="false" />
+    <Property Type="String" Name="NOMBREPISO" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

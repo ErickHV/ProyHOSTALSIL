@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HostalSILModelStoreContainer" CdmEntityContainer="HostalSILEntities">
+    <EntitySetMapping Name="Boleta">
+      <EntityTypeMapping TypeName="HostalSILModel.Boleta">
+        <MappingFragment StoreEntitySet="Boleta">
+          <ScalarProperty Name="IdBoleta" ColumnName="IdBoleta" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria_Servicio">
+      <EntityTypeMapping TypeName="HostalSILModel.Categoria_Servicio">
+        <MappingFragment StoreEntitySet="Categoria_Servicio">
+          <ScalarProperty Name="IdCategoriaServicio" ColumnName="IdCategoriaServicio" />
+          <ScalarProperty Name="NombreCategoriaServicio" ColumnName="NombreCategoriaServicio" />
+          <ScalarProperty Name="DescCategoriaServicio" ColumnName="DescCategoriaServicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriaMovoliario">
+      <EntityTypeMapping TypeName="HostalSILModel.CategoriaMovoliario">
+        <MappingFragment StoreEntitySet="CategoriaMovoliario">
+          <ScalarProperty Name="IdCategoriaMoviliario" ColumnName="IdCategoriaMoviliario" />
+          <ScalarProperty Name="NomCatMoviliario" ColumnName="NomCatMoviliario" />
+          <ScalarProperty Name="DescCategoriaMoviliario" ColumnName="DescCategoriaMoviliario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckIn">
+      <EntityTypeMapping TypeName="HostalSILModel.CheckIn">
+        <MappingFragment StoreEntitySet="CheckIn">
+          <ScalarProperty Name="IdCheckIn" ColumnName="IdCheckIn" />
+          <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+          <ScalarProperty Name="FechaIngeso" ColumnName="FechaIngeso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckOut">
+      <EntityTypeMapping TypeName="HostalSILModel.CheckOut">
+        <MappingFragment StoreEntitySet="CheckOut">
+          <ScalarProperty Name="IdCheckOut" ColumnName="IdCheckOut" />
+          <ScalarProperty Name="IdCheckIn" ColumnName="IdCheckIn" />
+          <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comprobante">
+      <EntityTypeMapping TypeName="HostalSILModel.Comprobante">
+        <MappingFragment StoreEntitySet="Comprobante">
+          <ScalarProperty Name="IdComprobante" ColumnName="IdComprobante" />
+          <ScalarProperty Name="IdBoleta" ColumnName="IdBoleta" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCheckIn">
+      <EntityTypeMapping TypeName="HostalSILModel.DetalleCheckIn">
+        <MappingFragment StoreEntitySet="DetalleCheckIn">
+          <ScalarProperty Name="IdDetalleCheckIn" ColumnName="IdDetalleCheckIn" />
+          <ScalarProperty Name="IdCheckIn" ColumnName="IdCheckIn" />
+          <ScalarProperty Name="IdHabitacion" ColumnName="IdHabitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleMoviliarioHabitacion">
+      <EntityTypeMapping TypeName="HostalSILModel.DetalleMoviliarioHabitacion">
+        <MappingFragment StoreEntitySet="DetalleMoviliarioHabitacion">
+          <ScalarProperty Name="IdDetalleMovHab" ColumnName="IdDetalleMovHab" />
+          <ScalarProperty Name="IdMoviliario" ColumnName="IdMoviliario" />
+          <ScalarProperty Name="IdHabitacion" ColumnName="IdHabitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetallePersonasCheckIn">
+      <EntityTypeMapping TypeName="HostalSILModel.DetallePersonasCheckIn">
+        <MappingFragment StoreEntitySet="DetallePersonasCheckIn">
+          <ScalarProperty Name="IdDetallePesonasCheckIn" ColumnName="IdDetallePesonasCheckIn" />
+          <ScalarProperty Name="IdDetalleCheckIn" ColumnName="IdDetalleCheckIn" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleReserva">
+      <EntityTypeMapping TypeName="HostalSILModel.DetalleReserva">
+        <MappingFragment StoreEntitySet="DetalleReserva">
+          <ScalarProperty Name="IdDetalleReserva" ColumnName="IdDetalleReserva" />
+          <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+          <ScalarProperty Name="IdHabitacion" ColumnName="IdHabitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleServicioCheckIn">
+      <EntityTypeMapping TypeName="HostalSILModel.DetalleServicioCheckIn">
+        <MappingFragment StoreEntitySet="DetalleServicioCheckIn">
+          <ScalarProperty Name="IdDetalleServicioCheckIn" ColumnName="IdDetalleServicioCheckIn" />
+          <ScalarProperty Name="IdCheckIn" ColumnName="IdCheckIn" />
+          <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleUsuarioRol">
+      <EntityTypeMapping TypeName="HostalSILModel.DetalleUsuarioRol">
+        <MappingFragment StoreEntitySet="DetalleUsuarioRol">
+          <ScalarProperty Name="IdDetalleUsuarioRol" ColumnName="IdDetalleUsuarioRol" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="HostalSILModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="HostalSILModel.Facturas">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="IdFacura" ColumnName="IdFacura" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="igv" ColumnName="igv" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Habitacion">
+      <EntityTypeMapping TypeName="HostalSILModel.Habitacion">
+        <MappingFragment StoreEntitySet="Habitacion">
+          <ScalarProperty Name="IdHabitacion" ColumnName="IdHabitacion" />
+          <ScalarProperty Name="NumeroHabitacion" ColumnName="NumeroHabitacion" />
+          <ScalarProperty Name="IdPiso" ColumnName="IdPiso" />
+          <ScalarProperty Name="IdTipoHabitacion" ColumnName="IdTipoHabitacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidencia">
+      <EntityTypeMapping TypeName="HostalSILModel.Incidencia">
+        <MappingFragment StoreEntitySet="Incidencia">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Moviliario">
+      <EntityTypeMapping TypeName="HostalSILModel.Moviliario">
+        <MappingFragment StoreEntitySet="Moviliario">
+          <ScalarProperty Name="IdMoviliario" ColumnName="IdMoviliario" />
+          <ScalarProperty Name="IdCategoriaMoviliario" ColumnName="IdCategoriaMoviliario" />
+          <ScalarProperty Name="Moviliario1" ColumnName="Moviliario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="HostalSILModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="FecNacimiento" ColumnName="FecNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Piso">
+      <EntityTypeMapping TypeName="HostalSILModel.Piso">
+        <MappingFragment StoreEntitySet="Piso">
+          <ScalarProperty Name="IdPiso" ColumnName="IdPiso" />
+          <ScalarProperty Name="NombrePiso" ColumnName="NombrePiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="HostalSILModel.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reserva">
+      <EntityTypeMapping TypeName="HostalSILModel.Reserva">
+        <MappingFragment StoreEntitySet="Reserva">
+          <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+          <ScalarProperty Name="FechaReserva" ColumnName="FechaReserva" />
+          <ScalarProperty Name="FechaCheckIn" ColumnName="FechaCheckIn" />
+          <ScalarProperty Name="FechaCheckOut" ColumnName="FechaCheckOut" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="HostalSILModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+          <ScalarProperty Name="DescRol" ColumnName="DescRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicio">
+      <EntityTypeMapping TypeName="HostalSILModel.Servicio">
+        <MappingFragment StoreEntitySet="Servicio">
+          <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
+          <ScalarProperty Name="IdCategoriaServicio" ColumnName="IdCategoriaServicio" />
+          <ScalarProperty Name="NombreServicio" ColumnName="NombreServicio" />
+          <ScalarProperty Name="DescServicio" ColumnName="DescServicio" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HostalSILModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoHabitacion">
+      <EntityTypeMapping TypeName="HostalSILModel.TipoHabitacion">
+        <MappingFragment StoreEntitySet="TipoHabitacion">
+          <ScalarProperty Name="IdTipoHabitacion" ColumnName="IdTipoHabitacion" />
+          <ScalarProperty Name="NombreTipoHabitacion" ColumnName="NombreTipoHabitacion" />
+          <ScalarProperty Name="NroCamas" ColumnName="NroCamas" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="PrecioCorporativo" ColumnName="PrecioCorporativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="HostalSILModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="DNIUsuario" ColumnName="DNIUsuario" />
+          <ScalarProperty Name="NombresUsuario" ColumnName="NombresUsuario" />
+          <ScalarProperty Name="ApellidosUsuario" ColumnName="ApellidosUsuario" />
+          <ScalarProperty Name="FecNacimientoUsuario" ColumnName="FecNacimientoUsuario" />
+          <ScalarProperty Name="TelefonoUsuario" ColumnName="TelefonoUsuario" />
+          <ScalarProperty Name="CelularUsuario" ColumnName="CelularUsuario" />
+          <ScalarProperty Name="CorreoUsuario" ColumnName="CorreoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllPersonas" FunctionName="HostalSILModel.Store.GetAllPersonas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HostalSILModel.GetAllPersonas_Result">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="FECNACIMIENTO" ColumnName="FECNACIMIENTO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllPisos" FunctionName="HostalSILModel.Store.GetAllPisos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HostalSILModel.GetAllPisos_Result">
+          <ScalarProperty Name="IDPISO" ColumnName="IDPISO" />
+          <ScalarProperty Name="NOMBREPISO" ColumnName="NOMBREPISO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HostalSILModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HostalSILModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HostalSILModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HostalSILModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HostalSILModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HostalSILModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HostalSILModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HostalSILModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HostalSILModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

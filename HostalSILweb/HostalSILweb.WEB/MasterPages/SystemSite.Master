@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SystemSite.master.cs" Inherits="HostalSILweb.WEB.MasterPages.SystemSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Content/bootstrap-theme.min.css" />
+    <script src="../Scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#f7f7f7">
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            <CdnSettings TelerikCdn="Disabled" />
+            <Scripts>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js"></asp:ScriptReference>
+            </Scripts>
+            <Services>
+                <asp:ServiceReference Path="~/App_Servicios/INVComandos.asmx" />
+            </Services>
+        </telerik:RadScriptManager>
+        <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
+        </telerik:RadWindowManager>
+        <telerik:RadFormDecorator ID="RadFormDecorator1" runat="server" 
+            DecoratedControls="All" />
+        <div class="container">
+            <div class="row" style="height:75px">
+                <div class="col-lg-11" style="color:#2b3b4e; font-size:50px; font-family:'01 Digitall'">
+                    HOSTAL SIL
+                </div>
+                <div class="col-lg-1" style="text-align:center">
+                    <a class="btn btn-primary" href="../FormsWeb/Default.aspx" role="button"> Cerrar Sesión </a>
+                </div>                
+            </div>
+            <div class="row" style="height:50px">
+                <div class="col-lg-12" style="color:#2b3b4e;">
+                    <telerik:RadMenu ID="rdMenu" runat="server">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/FormsSystem/HomeSystem.aspx" Text="Home">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="Administracion">
+                                <Items>
+                                    <telerik:RadMenuItem runat="server" NavigateUrl="~/FormsSystem/Administracion/Pisos.aspx" Text="Pisos">
+                                    </telerik:RadMenuItem>
+                                </Items>
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="Clientes" Owner="">
+                                <Items>
+                                    <telerik:RadMenuItem runat="server" NavigateUrl="~/FormsSystem/GestionReservas/Personas.aspx" Text="Buscar Personas" Owner="">
+                                    </telerik:RadMenuItem>
+                                </Items>
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="Habitaciones" Owner="">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="Reservas" Owner="">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="Servicios" Owner="">
+                            </telerik:RadMenuItem>
+                        </Items>
+                    </telerik:RadMenu>
+                </div>
+            </div>
+            <div class="row" style="height:800px">
+                <div class="col-lg-12">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="row" style="height:70px; text-align:center; font-family:'01 Digitall'">
+                <div class="col-lg-12">
+                    ©Todos los Derechos Reservados - HOSTAL SIL <br/>
+                    Desarrollo y Diseño de: Corcuera Urquiza, Carlos / Hernandez Valencia, Erick<br/>
+                    Desarrollado con fines Academicos<br/>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

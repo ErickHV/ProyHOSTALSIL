@@ -1,0 +1,10 @@
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\HostalSILweb.WEB.dll
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\HostalSILweb.WEB.pdb
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\EntityFramework.dll
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\Telerik.Web.UI.dll
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\Telerik.Web.UI.Skins.dll
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\EntityFramework.xml
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\bin\Telerik.Web.UI.xml
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\obj\Debug\HostalSILweb.WEB.csprojResolveAssemblyReference.cache
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\obj\Debug\HostalSILweb.WEB.dll
+C:\Users\ERICK\Documents\Visual Studio 2012\Projects\HostalSILweb\HostalSILweb.WEB\obj\Debug\HostalSILweb.WEB.pdb
